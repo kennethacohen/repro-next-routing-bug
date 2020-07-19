@@ -1,7 +1,8 @@
-import handler from '../../handler';
-import { openDB } from '../../openDB';
+import handler from '../../../handler';
+import { openDB } from '../../../openDB';
 
 export default handler.get(async (req, res) => {
+  console.log("<< index route >>")
   const db = await openDB();
   const champions = await db.all(`
     SELECT * 
